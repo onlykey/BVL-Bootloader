@@ -2,7 +2,7 @@
  * Copyright (c) 2018, Black Vault Labs LLC.
  * All rights reserved.
  * 
- * If you need this library for commecial use contact software@blackvaultlabs.com
+ * If you need this library for commercial use contact software@blackvaultlabs.com
  *
 */
 
