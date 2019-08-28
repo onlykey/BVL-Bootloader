@@ -11,10 +11,12 @@
 * 
 * 262,144 / 2048 = 128 sectors available in P-flash
 * 0x0000_0000 - 0x0000_604F used for bootloader up to 24656 bytes
-* 0x0000_6050 - Empty  between bootloader and firmware
-* 0x0000_6060 - 0x0003_AFEF used for firmware 216976 bytes (13 blocks of 16384 = 212992 bytes max size fw)
-* 0x0003_AFF0 - Empty between firmware and data storage
-* 0x0003_B000 - 0x0003_FFFF used for data storage 20480 bytes (10 sectors, 8 used, 2 reserved)
+* 0x0000_6050 - 0x0000_605F Empty between bootloader and firmware
+* 0x0000_6060 - 0x0003_A05F used for firmware (13 blocks of 16384 = 212992 bytes max size fw)
+* 113 bytes of firmware goes into next sector, the rest can be used for data
+* 0x0003_A060 - 0x0003_A06F - Empty between firmware and data storage
+* 0x0003_A070 - 0x0003_A7FF - Partial sector for data storage (1935 bytes)
+* 0x0003_A800 - 0x0003_FFFF used for data storage 22528 bytes (11 sectors)
 * TODO - Adjust wear leveling to use D-flash as data storage instead of P-flash (Tradeoff - Larger fw file support / Lower EEPROM write limit)
 ************************************************************/
 
